@@ -8,8 +8,8 @@ import ChatBot from "@/components/ChatBot";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Media Interaktif Next.js",
-  description: "Project Media Pembelajaran Modern dengan AI",
+  title: "Sistem Media Interaktif",
+  description: "Portal Pembelajaran Mata Kuliah SMI",
 };
 
 export default function RootLayout({

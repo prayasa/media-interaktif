@@ -4,19 +4,23 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { FolderOpen } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
     { name: "Beranda", href: "/" },
-    { name: "Materi", href: "/materi" },
+    { name: "Materi SMI", href: "/materi" },
     { name: "Tentang", href: "/tentang" },
   ];
 
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-40 border-b border-zinc-100 h-16 flex items-center px-6 md:px-20 justify-between transition-all">
-      <Link href="/" className="font-bold text-xl tracking-tighter hover:opacity-80 transition-opacity">
+      <Link href="/" className="font-bold text-xl tracking-tighter hover:opacity-80 transition-opacity flex items-center gap-2">
+        <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white">
+            <span className="font-bold text-xs">SMI</span>
+        </div>
         MediaInteraktif.
       </Link>
       
@@ -35,7 +39,9 @@ export default function Navbar() {
           </Link>
         ))}
         <Link href="/materi">
-            <Button size="sm" variant="default">Mulai Belajar</Button>
+            <Button size="sm" variant="default" className="gap-2">
+                <FolderOpen className="w-4 h-4" /> Akses Materi
+            </Button>
         </Link>
       </div>
 
