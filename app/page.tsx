@@ -1,22 +1,16 @@
-import ChatBot from "@/components/ChatBot";
 import Hero3D from "@/components/Hero3D";
 import MotionWrapper from "@/components/MotionWrapper";
 import QuizSection from "@/components/QuizSection";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Layers, Zap, Bot } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#FAFAFA] text-zinc-900 overflow-x-hidden">
-      {/* Navbar Sederhana */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-40 border-b border-zinc-100 h-16 flex items-center px-6 md:px-20 justify-between">
-        <div className="font-bold text-xl tracking-tighter">MediaInteraktif.</div>
-        <Button size="sm" variant="default">Mulai Belajar</Button>
-      </nav>
-
+    <main className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+      <section className="pt-32 pb-20 px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto min-h-[calc(100vh-4rem)]">
         <MotionWrapper>
           <Badge variant="secondary" className="mb-4 px-4 py-1">Versi 1.0 • Next.js Edition</Badge>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
@@ -29,22 +23,26 @@ export default function Home() {
             Platform pembelajaran modern dengan integrasi AI, animasi 3D, dan antarmuka yang responsif untuk pengalaman terbaik.
           </p>
           <div className="flex gap-4">
-            <Button size="lg" className="rounded-full px-8">
-              Mulai Sekarang <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8">
-              Lihat Demo
-            </Button>
+            <Link href="/materi">
+              <Button size="lg" className="rounded-full px-8">
+                Mulai Sekarang <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+            <Link href="/tentang">
+              <Button size="lg" variant="outline" className="rounded-full px-8">
+                Lihat Demo
+              </Button>
+            </Link>
           </div>
         </MotionWrapper>
 
         {/* 3D Object Area */}
-        <MotionWrapper delay={0.2} className="h-full w-full">
+        <MotionWrapper delay={0.2} className="h-full w-full flex items-center justify-center">
            <Hero3D />
         </MotionWrapper>
       </section>
 
-      {/* Features Grid (Bento Style) */}
+      {/* Features Grid */}
       <section className="py-20 px-6 md:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <MotionWrapper className="text-center mb-16">
@@ -83,14 +81,6 @@ export default function Home() {
            </MotionWrapper>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-10 text-center text-zinc-400 text-sm bg-white border-t border-zinc-100">
-        <p>© 2024 Project Media Interaktif. Dibuat dengan Next.js & ❤️.</p>
-      </footer>
-
-      {/* Chatbot selalu muncul */}
-      <ChatBot />
     </main>
   );
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth">
-      <body className={inter.className}>
-        {children}
+      <body className={`${inter.className} min-h-screen flex flex-col bg-[#FAFAFA] text-zinc-900`}>
+        <Navbar />
+        
+        {/* Main content wrapper */}
+        <div className="flex-1 w-full">
+          {children}
+        </div>
+        
+        <Footer />
+        <ChatBot />
       </body>
     </html>
   );
