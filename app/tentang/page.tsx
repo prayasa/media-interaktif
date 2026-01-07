@@ -23,7 +23,7 @@ export default function TentangPage() {
           </div>
         </MotionWrapper>
 
-        {/* Bagian Teks (Tetap Sesuai Permintaan Anda) */}
+        {/* Bagian Teks Tetap Sesuai */}
         <MotionWrapper delay={0.2}>
           <h1 className="text-4xl font-bold mb-6">Tentang Kami</h1>
           <p className="text-zinc-500 text-lg mb-6 leading-relaxed">

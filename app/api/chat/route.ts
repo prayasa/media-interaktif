@@ -15,8 +15,6 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
 
     // GANTI MODEL DI SINI
-    // 'gemini-1.5-pro' adalah model tier atas (lebih pintar dari Flash)
-    // Jika masih error, coba 'gemini-1.0-pro' (versi lama yang sangat stabil)
     const result = await streamText({
       model: google('models/gemini-pro'), 
       messages,

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { FolderOpen, ExternalLink, BookOpen } from "lucide-react";
 import Link from "next/link";
 
-// Kita generate 14 materi secara otomatis agar kodenya rapi
+// Generate 14 materi secara otomatis agar kodenya rapi
 const materials = Array.from({ length: 14 }, (_, i) => {
   const meeting = i + 1;
   return {
